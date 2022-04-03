@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Layers Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+    <style>
+        .cube {
+            width: 200px;
+            height: 200px;
+        }
+
+        .blue {
+            z-index: 1;
+            background-color: rgb(78, 78, 255);
+            transform: translateX(100px) translateY(50px) rotateZ(45deg);
+        }
+
+        .red {
+            z-index: 2;
+            background-color: rgb(245, 104, 104);
+            transform: translateX(100px) translateY(-150px) rotateZ(23deg);
+        }
+
+        .green {
+            z-index: 3;
+            background-color: rgb(70, 136, 70);
+            transform: translateX(100px) translateY(-350px);
+        }
+
+        .cyan {
+            background-color: cyan;
+            z-index: 10;
+            transform: translateX(100px) translateY(-550px);
+        }
+
+        .cyan:hover {
+            transform: translateX(100px) translateY(-550px) rotateZ(-23deg);
+            transition-duration: 3s;
+        }
+
+        .pink {
+            background-color: pink;
+            position: absolute;
+        }
+
+        .violet {
+            background-color: violet;
+            position: absolute;
+            transform: translateX(25px)
+        }
+
+
+        .magenta {
+            background-color: magenta;
+            position: absolute;
+        }
+
+        .magenta:hover {
+            transform: rotateY(90deg) rotateX(90deg) rotateZ(90deg);
+            transition: transform 2s;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transformation example</h1>
+    <h2>relatively positioned divs</h2>
+    <div style="background-color: beige; width: 400px;height: 300px;">
+        <div class="cube blue"></div>
+        <div class="cube red"></div>
+        <div class="cube green"></div>
+        <div class="cube cyan"> hover over me</div>
+    </div>
+    <h2>abosolutely positioned divs</h2>
+    <div style="position: relative;background-color: beige; width: 400px;height: 300px;">
+        <div class="cube pink d-none"></div>
+        <div class="cube violet"></div>
+        <div class="cube magenta"></div>
+    </div>
+</body>
+
+</html>

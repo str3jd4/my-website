@@ -1,0 +1,68 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wineGallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wineCard {
+    position: relative;
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: .5rem;
+    padding: 1rem;
+    box-shadow: 9px 8px 7px 0px rgba(0, 0, 0, .3);
+}
+
+.wineCard > h5, p, small {
+margin: 0;
+padding: 0;
+}
+
+.wineCard > p {
+    flex-grow: 2;
+    margin-bottom: 1rem;
+}
+
+.wineCard > img {
+    /* background-color: transparent; */
+    padding-bottom: .5rem;
+    width: 50%;
+    height: auto;
+    align-self: center;
+}
+
+.wineCard > small {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color:mediumvioletred;
+    font-weight: 600;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .wineGallery {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .wineCard {
+        width: 80%;
+    }
+
+    .wineCard > img {
+        display: none;
+    }
+}

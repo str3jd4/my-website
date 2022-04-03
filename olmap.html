@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Layers Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/css/ol.css" type="text/css">
+</head>
+<body>
+    <h1>Open Layers Map</h1>
+    <!-- Recatngle with the map  -->
+    <div id="map" class="map"></div>
+
+    <p>show on <a href="https://openstreetmap.org/#map=17/49.8237/18.3798" target="_blank">OpenStreetMap</a> in a new window</p>
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.2.1/build/ol.js"></script>
+    <script>
+        'use strict';
+
+        let map = null;
+        let str3jd4Map = {
+            "latitude": 49.8237,
+            "longitude": 18.3798
+        };
+
+        window.onload = function (){
+            drawMap(str3jd4Map);
+
+            console.log(str3jd4Map); // just checking
+        };
+
+        function drawMap(mapObject){
+            map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([mapObject.longitude, mapObject.latitude]),
+                    zoom: 17
+                })
+            });
+        }
+    </script>
+</body>
+</html>
