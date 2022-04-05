@@ -18,6 +18,11 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
+.heroImage img {
+    width: 100%;
+    height: auto;
+}
+
 .wineGallery {
     display: flex;
     flex-direction: row;
