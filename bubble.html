@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Bubble</h1>
+    <div>
+
+    </div>
+    <script>
+        let a = [14,8,8,0,1,8,15,9,8,3,8];
+
+        let iterations = 0;
+        console.log(`The original array is: ${a}`);
+        for(let i=1; i < a.length; i++){
+            for(let j=1; j <= (a.length-i); j++){
+                console.log(`i=${i}, j=${j}`);
+                if(a[j-1] > a[j]){
+                    let temp = a[j];
+                    a[j] = a[j-1];
+                    a[j-1] = temp;
+                }
+                iterations++;
+            }
+        }
+        console.log(`The result is: ${a} with ${iterations} iterations`);
+    </script>
+</body>
+
+</html>
